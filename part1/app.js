@@ -8,7 +8,6 @@ var usersRouter = require('./routes/users');
 
 // new route modules
 var dogRouter=require('./routes/dogRoutes');
-var dogRouter=require('./routes/dogRoutes');
 
 var app = express();
 
