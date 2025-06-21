@@ -22,7 +22,7 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    // Save minimal user info in session
+    // store minimal user info in session
     const user = rows[0];
     req.session.user = {
       user_id: user.user_id,
@@ -35,3 +35,16 @@ router.post('/login', async (req, res) => {
     return res.status(500).json({ error: 'Server error during login' });
   }
 });
+router.post('/logout', (req, res) => {
+    req.session.destroy(err => {
+    if (err) {
+      console.error('Logout error:', err);
+      return res.status(500).json({ error: 'Failed to log out' });
+    }
+    // Clear the session cookie
+    res.clearCookie('connect.sid');
+    return res.json({ message: 'Logged out' });
+  });
+});
+
+module.exports = router;
