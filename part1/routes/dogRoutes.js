@@ -1,6 +1,7 @@
-const express=require('express');
-const router=express.Router();
-const db=require
+//router/dogRouters.js
+const express = require('express');
+const router  = express.Router();
+const db      = require('../models/db');
 
 
 router.get('/api/dogs', async (req, res) => {
@@ -17,3 +18,5 @@ router.get('/api/dogs', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch dogs' });
   }
 });
+
+module.exports = router;
