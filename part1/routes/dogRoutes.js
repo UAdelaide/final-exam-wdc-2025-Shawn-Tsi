@@ -1,5 +1,6 @@
 const express=require('express');
-const router
+const router=express.Router();
+const db=require
 
 
 router.get('/api/dogs', async (req, res) => {
