@@ -44,7 +44,7 @@ router.post('/logout', (req, res) => {
         // Clear the session cookie
         res.clearCookie('connect.sid');
         return res.json({ message: 'Logged out' });
-  });
+    });
 });
 
 module.exports = router;
