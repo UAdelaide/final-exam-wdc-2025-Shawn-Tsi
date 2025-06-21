@@ -4,11 +4,11 @@ const db = require('../models/db');
 
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
-  if (!email || !password) {
-    return res.status(400).json({ error: 'Email and password required' });
-  }
+    if (!email || !password) {
+        return res.status(400).json({ error: 'Email and password required' });
+    }
 
-  try {
+    try {
     // Look up user by email + password_hash
     const [rows] = await db.query(
       `SELECT user_id, username, role
