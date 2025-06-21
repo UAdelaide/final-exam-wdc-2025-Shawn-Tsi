@@ -18,7 +18,7 @@ router.post('/login', async (req, res) => {
     );
 
     if (rows.length === 0) {
-      // no match → invalid credentials
+      // invalid credential
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
@@ -30,7 +30,7 @@ router.post('/login', async (req, res) => {
       role: user.role
     };
     return res.json({ message: 'Login successful', user: req.session.user });
-  } catch (err) {
+} catch (err) {
     console.error('Login error:', err);
     return res.status(500).json({ error: 'Server error during login' });
   }
