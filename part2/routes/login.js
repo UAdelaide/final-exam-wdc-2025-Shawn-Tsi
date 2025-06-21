@@ -25,9 +25,9 @@ router.post('/login', async (req, res) => {
     // Save minimal user info in session
     const user = rows[0];
     req.session.user = {
-      user_id:  user.user_id,
+      user_id: user.user_id,
       username: user.username,
-      role:     user.role
+      role: user.role
     };
 
     // Return the logged-in user
