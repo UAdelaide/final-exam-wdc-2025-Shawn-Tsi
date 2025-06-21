@@ -7,7 +7,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 // new route modules
-var dog
+var dogRouter=require('./routes/dogRoute')
 
 var app = express();
 
